@@ -6,12 +6,13 @@
 .navbar {
   align-items: center;
   background-color: #fff;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: row;
   font-family: sans-serif;
   padding: 0px 50px;
   height: 100px;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .push-left {
