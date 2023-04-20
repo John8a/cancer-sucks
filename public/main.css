@@ -516,8 +516,10 @@ footer .right-side p {
 }
 @media (max-width: 768px) {
   footer {
-    flex-direction: column;
     padding: 20px 20px;
+  }
+  footer .container {
+    flex-direction: column;
   }
   footer .left-side {
     margin-bottom: 10px;
@@ -526,8 +528,10 @@ footer .right-side p {
     width: 200px;
     height: 70px;
   }
-  footer .right-side .email * {
+  footer .right-side .email {
     text-align: left;
+  }
+  footer .right-side .email * {
     font-size: 0.8rem;
   }
 }

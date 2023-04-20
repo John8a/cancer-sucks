@@ -547,7 +547,7 @@ footer {
 
     .left-side {
         width: fit-content;
-        
+
         .logo img {
             width: 200px;
             height: 70px;
@@ -614,8 +614,11 @@ footer {
 
     // media query for mobile
     @media (max-width: 768px) {
-        flex-direction: column;
         padding: 20px 20px;
+        
+        .container {
+            flex-direction: column;
+        }
 
         .left-side {
             margin-bottom: 10px;
@@ -627,9 +630,10 @@ footer {
         }
 
         .right-side {
+            
             .email {
+                text-align: left;
                 * {
-                    text-align: left;
                     font-size: 0.8rem;
                 }
             }
