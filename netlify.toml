@@ -1,0 +1,7 @@
+[build]
+    base = "/"
+    publish = "/"
+
+[[redirects]]
+  from = "/"
+  to = "/index.html"
