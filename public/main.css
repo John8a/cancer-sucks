@@ -563,7 +563,7 @@ section[name=wer-wir-sind] .wer-wir-sind-wrapper .vorstellungs-bilder img {
   max-width: 350px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 50%;
+  border-radius: 15px;
 }
 section[name=wer-wir-sind] .wer-wir-sind-wrapper .heumoederntrails {
   margin: 50px 0;
