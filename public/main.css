@@ -80,9 +80,9 @@ main .container {
 }
 main section[name=hero] {
   position: relative;
-  background-image: url("assets/OAK Shooting.JPG");
+  background-image: url("assets/hero.png");
   background-size: cover;
-  background-position-y: -160px;
+  background-position: center;
   background-repeat: no-repeat;
   max-height: 600px;
   height: 600vh;
