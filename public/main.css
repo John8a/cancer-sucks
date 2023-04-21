@@ -578,6 +578,7 @@ section[name=datenschutz] .container p {
     display: none;
   }
   section[name=wer-wir-sind] .wer-wir-sind-wrapper h1 {
+    display: none;
     position: absolute;
     top: 16%;
     left: 30%;
