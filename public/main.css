@@ -13,6 +13,14 @@
   }
 }
 
+.photograf {
+  position: absolute;
+  font-size: 12px;
+  color: #fff;
+  bottom: 10px;
+  right: 10px;
+}
+
 button, input, a {
   font-family: "Rubik", sans-serif;
 }
@@ -42,6 +50,7 @@ main .container {
   padding: 0 40px;
 }
 main section[name=hero] {
+  position: relative;
   background-image: url("assets/hero.png");
   background-size: cover;
   background-position: center;
@@ -55,6 +64,10 @@ main section[name=hero] {
   flex-direction: column;
   gap: 10px;
   margin: 0 auto;
+}
+main section[name=hero] img {
+  max-width: 300px;
+  filter: invert(100%) sepia(16%) saturate(202%) hue-rotate(272deg) brightness(114%) contrast(100%);
 }
 main section[name=hero] h1 {
   font-size: 3rem;
@@ -265,11 +278,21 @@ main section[name=event-ablauf] h1.heading {
   text-align: center;
   margin-bottom: 50px;
 }
+main section[name=event-ablauf] .ablauf {
+  width: 60%;
+}
+main section[name=event-ablauf] .ablauf img.timeline {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 main section[name=event-ablauf] .event {
   margin-bottom: 50px;
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
 }
 main section[name=event-ablauf] .event .event-mobile {
@@ -280,66 +303,19 @@ main section[name=event-ablauf] .event .event-mobile {
     align-items: center;
   }
 }
-main section[name=event-ablauf] .event .ablauf {
-  display: flex;
-  flex-direction: column;
-}
-main section[name=event-ablauf] .event .ablauf .list-element {
-  display: flex;
-  align-items: center;
-  height: 130px;
-  gap: 20px;
-}
-main section[name=event-ablauf] .event .ablauf .list-element .time {
-  width: 130px;
-  font-weight: 700;
-}
-main section[name=event-ablauf] .event .ablauf .list-element .description {
-  border-left: 3px solid #D9D9D9;
-  padding-left: 20px;
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-main section[name=event-ablauf] .event .ablauf .list-element .description::before {
-  content: "";
-  display: block;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: var(--color-primary);
-  position: absolute;
-  top: -22.5px;
-  left: -8px;
-}
-main section[name=event-ablauf] .event .ablauf .list-element .description::after {
-  content: "";
-  display: block;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: var(--color-primary);
-  position: absolute;
-  bottom: -22.5px;
-  left: -8px;
-}
 main section[name=event-ablauf] .event .event-bild {
-  max-height: 800px;
+  width: 40%;
+  max-height: 650px;
+  height: 650px;
   position: relative;
-}
-main section[name=event-ablauf] .event .event-bild img {
-  height: 100%;
-  width: -moz-min-content;
-  width: min-content;
-  float: right;
-  max-height: 750px;
+  background-image: url("../public/assets/ventbild.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 15px;
 }
 main section[name=event-ablauf] .event .event-bild .overlay {
   position: absolute;
   top: 0;
-  left: 30px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -353,6 +329,7 @@ main section[name=event-ablauf] .event .event-bild .overlay img {
   -o-object-fit: contain;
      object-fit: contain;
   margin-bottom: 15px;
+  filter: brightness(0) invert(1);
 }
 main section[name=event-ablauf] .end-call {
   text-align: center;
@@ -362,35 +339,6 @@ main section[name=event-ablauf] .end-call {
   main section[name=event-ablauf] .event {
     gap: 20px;
     padding: 0 40px;
-  }
-  main section[name=event-ablauf] .event .ablauf .list-element {
-    height: 80px;
-    gap: 10px;
-  }
-  main section[name=event-ablauf] .event .ablauf .list-element .time {
-    width: 120px;
-    font-size: 0.8rem;
-  }
-  main section[name=event-ablauf] .event .ablauf .list-element .description {
-    height: 60px;
-  }
-  main section[name=event-ablauf] .event .ablauf .list-element .description h3 {
-    font-size: 1rem;
-  }
-  main section[name=event-ablauf] .event .ablauf .list-element .description p {
-    font-size: 0.8rem;
-  }
-  main section[name=event-ablauf] .event .ablauf .list-element .description::before {
-    width: 10px;
-    height: 10px;
-    top: -15px;
-    left: -6px;
-  }
-  main section[name=event-ablauf] .event .ablauf .list-element .description::after {
-    width: 10px;
-    height: 10px;
-    bottom: -15px;
-    left: -6px;
   }
   main section[name=event-ablauf] .event .event-bild img {
     max-width: 30vw;
@@ -404,44 +352,16 @@ main section[name=event-ablauf] .end-call {
     font-size: 0.9rem;
   }
 }
-@media (max-width: 1024px) and (max-width: 768px) {
-  main section[name=event-ablauf] .event .event-bild {
-    display: none;
-  }
-}
-@media (max-width: 768px) {
+@media (max-width: 876px) {
   main section[name=event-ablauf] .event {
     flex-direction: column;
+    align-items: center;
     padding: 0 20px;
+    height: -moz-fit-content;
+    height: fit-content;
   }
-  main section[name=event-ablauf] .event .ablauf .list-element {
-    height: 80px;
-    gap: 10px;
-  }
-  main section[name=event-ablauf] .event .ablauf .list-element .time {
-    width: 80px;
-    font-size: 0.7rem;
-  }
-  main section[name=event-ablauf] .event .ablauf .list-element .description {
-    height: 60px;
-  }
-  main section[name=event-ablauf] .event .ablauf .list-element .description h3 {
-    font-size: 0.8rem;
-  }
-  main section[name=event-ablauf] .event .ablauf .list-element .description p {
-    font-size: 0.6rem;
-  }
-  main section[name=event-ablauf] .event .ablauf .list-element .description::before {
-    width: 10px;
-    height: 10px;
-    top: -15px;
-    left: -6px;
-  }
-  main section[name=event-ablauf] .event .ablauf .list-element .description::after {
-    width: 10px;
-    height: 10px;
-    bottom: -15px;
-    left: -6px;
+  main section[name=event-ablauf] .event .ablauf {
+    width: 100%;
   }
   main section[name=event-ablauf] .event .event-bild {
     display: none;
@@ -552,6 +472,7 @@ section[name=wer-wir-sind] .wer-wir-sind-wrapper p {
   text-align: justify;
 }
 section[name=wer-wir-sind] .wer-wir-sind-wrapper .vorstellungs-bilder {
+  position: relative;
   margin: 50px 0;
   display: flex;
   gap: 50px;
@@ -605,6 +526,15 @@ section[name=datenschutz] .container p {
 }
 
 @media (max-width: 768px) {
+  main section[name=hero] {
+    background-position: 75% 0;
+  }
+  main section[name=event-ablauf] h1.heading {
+    margin-bottom: 20px;
+  }
+  main section[name=event-ablauf] .event {
+    margin: 20px 0 30px;
+  }
   main section[name=about] .about-wrapper .about-text .btns {
     margin-top: 20px;
   }
@@ -615,7 +545,8 @@ section[name=datenschutz] .container p {
     margin: 20px 0 !important;
   }
   p {
-    font-size: 0.8rem;
+    font-size: 0.8rem !important;
+    text-align: justify;
   }
   main section[name=event-ablauf] {
     margin: 20px 0;
@@ -636,9 +567,6 @@ section[name=datenschutz] .container p {
   section[name=wer-wir-sind] .container.wir {
     padding: 0;
   }
-  section[name=wer-wir-sind] .subtitle {
-    display: none;
-  }
   section[name=wer-wir-sind] .wer-wir-sind-wrapper {
     padding: 0;
     position: relative;
@@ -646,8 +574,15 @@ section[name=datenschutz] .container p {
     align-items: left;
     margin-top: 0;
   }
-  section[name=wer-wir-sind] .wer-wir-sind-wrapper h1, section[name=wer-wir-sind] .wer-wir-sind-wrapper p.subtitle {
+  section[name=wer-wir-sind] .wer-wir-sind-wrapper p.subtitle {
     display: none;
+  }
+  section[name=wer-wir-sind] .wer-wir-sind-wrapper h1 {
+    position: absolute;
+    top: 16%;
+    left: 30%;
+    z-index: 100;
+    color: #fff;
   }
   section[name=wer-wir-sind] .wer-wir-sind-wrapper .vorstellungs-bilder {
     margin-top: 0;
@@ -676,14 +611,36 @@ section[name=datenschutz] .container p {
     gap: 20px;
   }
 }
+@media (max-width: 1024px) {
+  main section[name=event-ablauf] .event .event-bild {
+    max-height: 500px;
+    background-position: 0 -75px;
+  }
+}
 @media (max-width: 400px) {
+  main section[name=event-ablauf] h1.heading {
+    margin-bottom: 20px;
+  }
   .vorstellungs-bilder img {
     min-width: 100vw;
   }
 }
+.mobile-show {
+  display: none;
+}
+
 @media (max-width: 471px) {
+  .mobile-hidden {
+    display: none;
+  }
+  .mobile-show {
+    display: block;
+  }
   section[name=hero] {
-    background-position: 75% 50% !important;
+    background-image: url(../public/assets/hero_mobile.jpg) !important;
+  }
+  section[name=event-ablauf] .event {
+    padding: 0 !important;
   }
   section[name=event-ablauf] .description h3 {
     font-size: 0.6rem !important;
@@ -693,6 +650,10 @@ section[name=datenschutz] .container p {
   }
   section[name=event-ablauf] .time {
     font-size: 0.5rem !important;
+  }
+  main section[name=about] .about-wrapper .about-text .btns {
+    display: flex;
+    flex-direction: row;
   }
   *[class*=btn] {
     font-size: 0.7rem !important;
@@ -711,5 +672,8 @@ section[name=datenschutz] .container p {
   }
   .heumoederntrails img {
     max-width: 200px !important;
+  }
+  footer .right-side p {
+    text-align: left;
   }
 }/*# sourceMappingURL=main.css.map */

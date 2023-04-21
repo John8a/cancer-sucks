@@ -14,6 +14,14 @@
 
 @import "navbar.css";
 
+.photograf {
+    position: absolute;
+    font-size: 12px;
+    color: #fff;
+    bottom: 10px;
+    right: 10px;
+}
+
 button, input, a {
     font-family: 'Rubik', sans-serif;
 }
@@ -46,6 +54,7 @@ main {
     }
     section {
         &[name="hero"] { 
+            position: relative;
             background-image: url("assets/hero.png");
             background-size: cover;
             background-position: center;
@@ -59,6 +68,11 @@ main {
             flex-direction: column;
             gap: 10px;
             margin: 0 auto;
+
+            img {
+                max-width: 300px;
+                filter: invert(100%) sepia(16%) saturate(202%) hue-rotate(272deg) brightness(114%) contrast(100%);
+            }
 
             h1 {
                 font-size: 3rem;
@@ -304,11 +318,22 @@ main {
                 margin-bottom: 50px;
             }
 
+            .ablauf {
+                width: 60%;
+
+                img.timeline {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
             .event {
                 margin-bottom: 50px;
+                margin-top: 50px;
                 display: flex;
                 justify-content: space-between;
-                align-items: center;
+                align-items:flex-start;
                 height: 100%;
 
                 .event-mobile {
@@ -320,73 +345,19 @@ main {
                     align-items: center;
                 }
 
-                .ablauf {
-                    display: flex;
-                    flex-direction: column;
-
-                    .list-element {
-                        display: flex;
-                        align-items: center;
-                        height: 130px;
-                        gap: 20px;
-
-                        .time {
-                            width: 130px;
-                            font-weight: 700;
-                        }
-
-                        .description {
-                            border-left: 3px solid #D9D9D9;
-                            padding-left: 20px;
-                            height: 100px;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            position: relative;
-
-                            // create a ball that is 10px in diameter and above and under the border-left with before and after
-                            &::before {
-                                content: "";
-                                display: block;
-                                width: 15px;
-                                height: 15px;
-                                border-radius: 50%;
-                                background-color: var(--color-primary);
-                                position: absolute;
-                                top: -22.5px;
-                                left: -8px;
-                            }
-
-                            &::after {
-                                content: "";
-                                display: block;
-                                width: 15px;
-                                height: 15px;
-                                border-radius: 50%;
-                                background-color: var(--color-primary);
-                                position: absolute;
-                                bottom: -22.5px;
-                                left: -8px;
-                            }
-                        }
-                    }
-                }
-
                 .event-bild {
-                    max-height: 800px;
+                    width: 40%;
+                    max-height: 650px;
+                    height: 650px;
                     position: relative;
-
-                    img {
-                        height: 100%;
-                        width: min-content;
-                        float: right;
-                        max-height: 750px;
-                    }
+                    background-image: url("../public/assets/ventbild.png");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    border-radius: 15px;
 
                     .overlay {
                         position: absolute;
                         top: 0;
-                        left: 30px;
                         width: 100%;
                         height: 100%;
                         display: flex;
@@ -399,6 +370,7 @@ main {
                             height: 70px;
                             object-fit: contain;
                             margin-bottom: 15px;
+                            filter: brightness(0) invert(1);
                         }
                     }
                 }
@@ -415,43 +387,6 @@ main {
                 .event {
                     gap: 20px;
                     padding: 0 40px;
-                    
-                    .ablauf .list-element {
-                        height: 80px;
-                        gap: 10px;
-
-                        .time {
-                            width: 120px;
-                            font-size: 0.8rem;
-                        }
-
-                        .description {
-                            height: 60px;
-
-                            h3 {
-                                font-size: 1rem;
-                            }
-
-                            p {
-                                font-size: 0.8rem;
-                            }
-
-                            // before and after
-                            &::before {
-                                width: 10px;
-                                height: 10px;
-                                top: -15px;
-                                left: -6px;
-                            }
-
-                            &::after {
-                                width: 10px;
-                                height: 10px;
-                                bottom: -15px;
-                                left: -6px;
-                            }
-                        }
-                    }
 
                     .event-bild {
                         img {
@@ -469,58 +404,20 @@ main {
                                 font-size: 0.9rem;
                             }
                         }
-
-                        // media query for mobile
-                        @media (max-width: 768px) {
-                            display: none;
-                        }
                     }
                 }
             }
 
             // media query for mobile
-            @media (max-width: 768px) {
+            @media (max-width: 876px) {
                 .event {
                     flex-direction: column;
+                    align-items: center;
                     padding: 0 20px;
+                    height: fit-content;
 
                     .ablauf {
-                        .list-element {
-                            height: 80px;
-                            gap: 10px;
-
-                            .time {
-                                width: 80px;
-                                font-size: 0.7rem;
-                            }
-
-                            .description {
-                                height: 60px;
-
-                                h3 {
-                                    font-size: 0.8rem;
-                                }
-
-                                p {
-                                    font-size: 0.6rem;
-                                }
-
-                                // before and after
-                                &::before {
-                                    width: 10px;
-                                    height: 10px;
-                                    top: -15px;
-                                    left: -6px;
-                                }
-
-                                &::after {
-                                    width: 10px;
-                                    height: 10px;
-                                    bottom: -15px;
-                                    left: -6px;
-                                }
-                            }
-                        }
+                        width: 100%;
                     }
 
                     .event-bild {
@@ -659,6 +556,7 @@ section[name="wer-wir-sind"] {
         }
 
         .vorstellungs-bilder {
+            position: relative;
             margin: 50px 0;
             display: flex;
             gap: 50px;
@@ -721,6 +619,18 @@ section[name="datenschutz"] {
 // media query for mobile
 @media (max-width: 768px) {
 
+    main section[name="hero"] {
+        background-position: 75% 0;
+    }
+
+    main section[name="event-ablauf"] h1.heading {
+        margin-bottom: 20px;
+    }
+
+    main section[name="event-ablauf"] .event {
+        margin: 20px 0 30px;
+    }
+
     main section[name=about] .about-wrapper .about-text .btns {
         margin-top: 20px;
     }
@@ -734,7 +644,8 @@ section[name="datenschutz"] {
     }
 
     p {
-        font-size: 0.8rem;
+        font-size: 0.8rem !important;
+        text-align: justify;
     }
 
     main section[name=event-ablauf] {
@@ -763,10 +674,6 @@ section[name="datenschutz"] {
             padding: 0;
         }
 
-        .subtitle {
-            display: none;
-        }
-
         .wer-wir-sind-wrapper {
             padding: 0;
             position: relative;
@@ -774,8 +681,16 @@ section[name="datenschutz"] {
             align-items: left;
             margin-top: 0;
             
-            h1, p.subtitle {
+            p.subtitle {
                 display: none;
+            }
+
+            h1 {
+                position: absolute;
+                top: 16%;
+                left: 30%;
+                z-index: 100;
+                color: #fff;
             }
             
             .vorstellungs-bilder {
@@ -810,8 +725,19 @@ section[name="datenschutz"] {
     }
 }
 
+@media (max-width: 1024px) {
+    main section[name="event-ablauf"] .event .event-bild {
+        max-height: 500px;
+        background-position: 0 -75px;
+    }
+}
+
 // media query for 400px
 @media (max-width: 400px) {
+    main section[name="event-ablauf"] h1.heading {
+        margin-bottom: 20px;
+    }
+
     .vorstellungs-bilder {
         img {
             min-width: 100vw;
@@ -819,12 +745,28 @@ section[name="datenschutz"] {
     }
 }
 
+.mobile-show {
+    display: none;
+}
+
 @media (max-width: 471px) {
+    .mobile-hidden {
+        display: none;
+    }
+
+    .mobile-show {
+        display: block;
+    }
+
     section[name=hero] {
-        background-position: 75% 50% !important;
+        background-image: url(../public/assets/hero_mobile.jpg) !important;
     }
 
     section[name="event-ablauf"] {
+        .event {
+            padding: 0 !important;
+        }
+
         .description {
             h3 {
                 font-size: 0.6rem !important;
@@ -838,6 +780,11 @@ section[name="datenschutz"] {
         .time {
             font-size: 0.5rem !important;
         }
+    }
+
+    main section[name="about"] .about-wrapper .about-text .btns {
+        display: flex;
+        flex-direction: row;
     }
 
     *[class*='btn'] {
@@ -864,5 +811,9 @@ section[name="datenschutz"] {
         img {
             max-width: 200px !important;
         }
+    }
+
+    footer .right-side p {
+        text-align: left;
     }
 }
