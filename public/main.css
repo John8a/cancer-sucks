@@ -342,6 +342,7 @@ main section[name=event-ablauf] .event .event-bild {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 15px;
+  background-position-y: -75px;
 }
 main section[name=event-ablauf] .event .event-bild .overlay {
   position: absolute;
