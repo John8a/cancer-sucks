@@ -27,11 +27,11 @@
 }
 
 .glide__arrow--left {
-  left: 0;
+  left: 20px;
 }
 
 .glide__arrow--right {
-  right: 0;
+  right: 20px;
 }
 
 .glide__slide {
@@ -709,4 +709,65 @@ section[name=datenschutz] .container p {
   footer .right-side p {
     text-align: left;
   }
+}
+.ergebnisse {
+  display: flex;
+  flex-direction: column;
+}
+.ergebnisse .row {
+  display: flex;
+}
+.ergebnisse .row img {
+  max-width: 65%;
+}
+.ergebnisse .vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ergebnisse .row2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.ergebnisse .row2 img {
+  width: 33%;
+}
+
+@media (max-width: 1200px) {
+  .ergebnisse-mobile {
+    display: block !important;
+  }
+  .ergebnisse {
+    display: none;
+  }
+}
+.ergebnisse-mobile {
+  display: none;
+  height: 480px;
+}
+.ergebnisse-mobile img {
+  height: 400px;
+}
+.ergebnisse-mobile .glide__bullets_rennen {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.ergebnisse-mobile .glide__arrows_rennen {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  transform: translateY(-300%);
+}
+.ergebnisse-mobile .glide__arrows_rennen .glide__arrow_rennen {
+  background-color: #90B4CB;
+  border: 0;
+  font-size: 15px;
+  padding: 9px 12px;
+  color: #fff;
+  border-radius: 4px;
 }/*# sourceMappingURL=main.css.map */
