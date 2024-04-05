@@ -208,25 +208,11 @@ main {
                         transition: all 0.3s ease-in-out;
                         text-decoration: none;
                     }
-
-                    .btn-secondary {
-                        background-color: var(--color-secondary);
-                        color: #fff;
-                        padding: 10px 10px;
-                        border-radius: 10px;
-                        font-size: 20px;
-                        font-weight: 700;
-                        border: none;
-                        cursor: pointer;
-                        transition: all 0.3s ease-in-out;
-                        text-decoration: none;
-                    }
                 }
 
                 .about-images {
                     position: relative;
                     width: 40%;
-                    margin-right: 30px;
                     margin-top: 10px;
 
                     img {
@@ -234,16 +220,8 @@ main {
                         right: 0;
                         border-radius: 15px;
                         height: 250px;
-                        width: 250px;
+                        width: 100%;
                         position: absolute;
-
-                        &:nth-child(1) {
-                            transform: rotate(5deg);
-                        }
-
-                        &:nth-child(2) {
-                            transform: rotate(-5deg);
-                        }
                     }
 
                     @media (max-width: 768px) {
@@ -364,7 +342,7 @@ main {
                 margin-top: 50px;
                 display: flex;
                 justify-content: space-between;
-                align-items:flex-start;
+                align-items: center;
                 height: 100%;
 
                 .event-mobile {
@@ -385,7 +363,6 @@ main {
                     background-repeat: no-repeat;
                     background-size: cover;
                     border-radius: 15px;
-                    background-position-y: -75px;
 
                     .overlay {
                         position: absolute;
@@ -762,7 +739,6 @@ section[name="datenschutz"] {
 @media (max-width: 1024px) {
     main section[name="event-ablauf"] .event .event-bild {
         max-height: 500px;
-        background-position: 0 -75px;
     }
 }
 
@@ -874,7 +850,6 @@ section[name="datenschutz"] {
     .row2 {
         display: flex;
         justify-content: center;
-        margin-bottom: 50px;
 
         img {
             width: 33%;
@@ -901,30 +876,92 @@ section[name="datenschutz"] {
     img {
         height: 400px;
     }
+}
 
-    .glide__bullets_rennen {
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
+
+.distanz-bild {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+
+    img {
+        height: 80%;
+        width: 80%;
+    }
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+
+.glide__bullets_rennen {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.glide__arrows_rennen {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    transform: translateY(-300%);
+    
+    .glide__arrow_rennen {
+        background-color: #90B4CB;
+        border: 0;
+        font-size: 15px;
+        padding: 9px 12px;
+        color: #fff;
+        border-radius: 4px;
+
+    }
+}
+
+
+.impressionen-slider {
+    margin-top: 50px;
+
+    .glide__slide {
+        width: 100%;
+        height: 100%;
     }
 
-    .glide__arrows_rennen {
-        height: 100px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 auto;
-        transform: translateY(-300%);
-        
-        .glide__arrow_rennen {
-            background-color: #90B4CB;
-            border: 0;
-            font-size: 15px;
-            padding: 9px 12px;
-            color: #fff;
-            border-radius: 4px;
+    img {
+        width: 100%;
+        object-fit: fill;
+    }
+}
 
+.impressionen-track {
+    height: 600px;
+}
+
+@media (max-width: 1024px) {
+    .impressionen-track {
+        height: auto;
+
+        .glide__slides {
+            height: 350px;
+        }
+
+    }
+
+    .impressionen-slider {
+        .glide__arrows_rennen {
+            transform: translateY(-250px) !important;
         }
     }
-
 }
