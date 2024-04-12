@@ -107,6 +107,7 @@ main section[name=hero] h2 {
   font-size: 1.5rem;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   color: #fff;
+  text-align: center;
 }
 main section[name=hero] .btn-primary {
   margin-top: 20px;
@@ -649,7 +650,7 @@ section[name=datenschutz] .container p {
     display: block;
   }
   section[name=hero] {
-    background-image: url(../public/assets/hero_mobile.jpg) !important;
+    background-image: url(../public/assets/hero.png) !important;
   }
   section[name=event-ablauf] .event {
     padding: 0 !important;
